@@ -1,14 +1,29 @@
 import Fluent
 import Vapor
+import Leaf
+
+struct Item: Codable {
+    var title: String
+    var description: String
+}
+
 
 func routes(_ app: Application) throws {
-    app.get { req in
-        return "It works!"
+    
+    app.get { req -> EventLoopFuture<View> in
+        
+        return req.view.render("index")
     }
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
+    app.get("index") { (req) -> EventLoopFuture<View> in
+        return req.view.render("index")
     }
-
-    try app.register(collection: TodoController())
+    
+    app.get("buttons") { (req) -> EventLoopFuture<View> in
+        return req.view.render("buttons")
+    }
+    
+    app.get("cards") { (req) -> EventLoopFuture<View> in
+        return req.view.render("cards")
+    }
 }
