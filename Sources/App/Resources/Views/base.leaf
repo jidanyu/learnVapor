@@ -218,10 +218,10 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-
-            <div class="container-fluid">
-                #import("pageContent")
+            <div>
+              #import("pageContent")
             </div>
+
             <!-- /.container-fluid -->
 
           </div>
