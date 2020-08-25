@@ -18,8 +18,6 @@ func routes(_ app: Application) throws {
             return req.view.render(endPoint.name)
         }
     }
-        
-    
 }
 
 
