@@ -16,6 +16,9 @@
 
   <!-- Custom styles for this template-->
   <link href="/styles/css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Custom styles for child -->
+  <link href="/styles/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -285,5 +288,15 @@
   <!-- Page level custom scripts -->
   <script src="/styles/js/demo/chart-area-demo.js"></script>
   <script src="/styles/js/demo/chart-pie-demo.js"></script>
+  <script src="/styles/js/demo/chart-bar-demo.js"></script>
+
+
+  <!-- Page level plugins -->
+  <script src="/styles/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="/styles/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/styles/js/demo/datatables-demo.js"></script>
+
 </body>
 </html>
