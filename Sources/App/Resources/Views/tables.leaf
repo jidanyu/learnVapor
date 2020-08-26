@@ -1,4 +1,8 @@
 #extend("base"):
+    #export("css"):
+      <link href="/styles/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    #endexport
+
 
     #export("pageContent"):
       <!-- Begin Page Content -->
@@ -502,4 +506,14 @@
       </div>
       <!-- /.container-fluid -->
     #endexport
+
+    #export("script"):
+    <!-- Page level plugins -->
+    <script src="/styles/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/styles/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/styles/js/demo/datatables-demo.js"></script>
+    #endexport
+
 #endextend

@@ -1,4 +1,8 @@
 #extend("base"):
+    #export("css"):
+
+    #endexport
+
     #export("pageContent"):
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -64,4 +68,15 @@
     </div>
     <!-- /.container-fluid -->
     #endexport
+
+    #export("script"):
+    <!-- Page level plugins -->
+    <script src="/styles/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/styles/js/demo/chart-area-demo.js"></script>
+    <script src="/styles/js/demo/chart-pie-demo.js"></script>
+    <script src="/styles/js/demo/chart-bar-demo.js"></script>
+    #endexport
+
 #endextend

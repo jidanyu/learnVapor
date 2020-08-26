@@ -18,6 +18,12 @@ func routes(_ app: Application) throws {
             return req.view.render(endPoint.name)
         }
     }
+    
+    app.post("register") { req -> EventLoopFuture<View> in
+        //TODO: 新建一个用户,成功进入后台,失败提示
+        return req.view.render("")
+    }
+    
 }
 
 

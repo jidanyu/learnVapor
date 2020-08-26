@@ -1,4 +1,6 @@
 #extend("base"):
+    #export("css","")
+    #export("script","")
     #export("pageContent"):
     <!-- Begin Page Content -->
     <div class="container-fluid">

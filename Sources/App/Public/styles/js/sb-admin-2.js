@@ -53,4 +53,10 @@
     e.preventDefault();
   });
 
+  $("#RegisterAccount").on('click', function(e) {
+
+    var firstName = $("#exampleFirstName").val();
+    alert(firstName);
+  });
+
 })(jQuery); // End of use strict
