@@ -19,13 +19,18 @@ func routes(_ app: Application) throws {
         }
     }
     
-    app.post("register") { req -> EventLoopFuture<View> in
-        //TODO: 新建一个用户,成功进入后台,失败提示
-        return req.view.render("")
+    app.post("register") { req -> InfoResponse in
+      
+      let user = try req.content.decode(User.self)
+      
+        return InfoResponse(request: user)
     }
     
 }
 
+struct InfoResponse: Content {
+  let request: User
+}
 
 struct EndPoint: Codable {
    let path: String

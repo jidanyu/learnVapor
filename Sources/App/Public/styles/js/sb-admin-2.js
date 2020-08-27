@@ -53,10 +53,44 @@
     e.preventDefault();
   });
 
-  $("#RegisterAccount").on('click', function(e) {
 
+
+// $("#danger-alert").hide();
+
+// $("#RegisterAccount").click(function showAlert() {
+//     $("#danger-alert").fadeTo(2000, 500);
+// });
+
+
+var hiddenBox = $( "#danger-alert" );
+
+  $("#RegisterAccount").on('click', function(e) {
+    hiddenBox.show();
     var firstName = $("#exampleFirstName").val();
-    alert(firstName);
+    var lastName = $("#exampleLastName").val();
+    var email = $("#exampleInputEmail").val();
+    var password = $("#exampleInputPassword").val();
+    var repeatPassword = $("#exampleRepeatPassword").val();
+
+    $.ajax({
+    type: 'POST',
+    url: 'register',
+    data: {
+      firstName : firstName,
+      lastName : lastName,
+      emailAddresss : email,
+      password : repeatPassword
+    },
+  }).done(function(data){
+    alert(data.request['firstName'])
+
+}).fail(function(xmlHttpRequest, statusText, errorThrown) {
+    alert(
+      'Your form submission failed.\n\n'
+        + 'XML Http Request: ' + JSON.stringify(xmlHttpRequest)
+        + ',\nStatus Text: ' + statusText
+        + ',\nError Thrown: ' + errorThrown);
+  });
   });
 
 })(jQuery); // End of use strict
