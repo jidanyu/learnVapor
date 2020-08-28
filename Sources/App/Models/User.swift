@@ -13,19 +13,19 @@ final class User: Model, Content {
     @Field(key: "last_name")
     var lastName: String
     
-    @Field(key: "email_addresss")
-    var emailAddresss: String
+    @Field(key: "email_address")
+    var emailAddress: String
     
     @Field(key: "password")
     var password: String
 
     init() { }
 
-    init(id: UUID? = nil, firstName: String, lastName: String, email_addresss: String, password: String) {
+    init(id: UUID? = nil, firstName: String, lastName: String, email_address: String, password: String) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
-        self.emailAddresss = email_addresss
+        self.emailAddress = email_address
         self.password = password
     }
 }

@@ -19,12 +19,22 @@ func routes(_ app: Application) throws {
         }
     }
     
-    app.post("register") { req -> InfoResponse in
-      
-      let user = try req.content.decode(User.self)
-      
-        return InfoResponse(request: user)
-    }
+//    app.post("register") { req -> EventLoopFuture<HTTPStatus> in
+//
+//        let user = try req.content.decode(User.self)
+//
+//        let userDidCreate = user.create(on: app.db)
+//
+//        userDidCreate.whenComplete { result in
+//            switch result {
+//            case .success(let user)
+//                return
+//            }
+//        }
+//    }
+    
+    
+    try app.register(collection: UserController())
     
 }
 

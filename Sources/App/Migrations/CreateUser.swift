@@ -8,6 +8,7 @@ struct CreateUser: Migration {
             .field("last_name", .string, .required)
             .field("email_address", .string, .required)
             .field("password", .string, .required)
+            .unique(on: "email_address")
             .create()
     }
 
@@ -15,3 +16,5 @@ struct CreateUser: Migration {
         return database.schema("users").delete()
     }
 }
+
+

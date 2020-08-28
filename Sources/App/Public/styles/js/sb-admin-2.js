@@ -65,7 +65,7 @@
 var hiddenBox = $( "#danger-alert" );
 
   $("#RegisterAccount").on('click', function(e) {
-    hiddenBox.show();
+    // hiddenBox.show();
     var firstName = $("#exampleFirstName").val();
     var lastName = $("#exampleLastName").val();
     var email = $("#exampleInputEmail").val();
@@ -74,15 +74,16 @@ var hiddenBox = $( "#danger-alert" );
 
     $.ajax({
     type: 'POST',
-    url: 'register',
+    url: 'users',
     data: {
       firstName : firstName,
       lastName : lastName,
-      emailAddresss : email,
+      emailAddress : email,
       password : repeatPassword
     },
   }).done(function(data){
-    alert(data.request['firstName'])
+    var user = data;
+    alert('你好'+ user['lastName'] + '创建成功')
 
 }).fail(function(xmlHttpRequest, statusText, errorThrown) {
     alert(
